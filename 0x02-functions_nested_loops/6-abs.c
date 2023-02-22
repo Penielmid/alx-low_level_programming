@@ -1,8 +1,9 @@
 #include "main.h"
 
 /**
- * _abs -computes the absolute value
+ * _abs - computes the absolute value
  * @c: the number to be checked
+ * Return: as stated in the task
  */
 
 int _abs(int c)
