@@ -1,4 +1,3 @@
-julien@ubuntu:~/0x0c. macro, structures$ cat 0-main.c
 #include "0-object_like_macro.h"
 #include "0-object_like_macro.h"
 #include <stdio.h>
