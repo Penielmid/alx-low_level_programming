@@ -28,5 +28,5 @@ fast = fast->next;
 return (fast);
 }
 }
- return (NULL);
+return (NULL);
 }
