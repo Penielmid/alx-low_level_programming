@@ -48,7 +48,7 @@ void print_magic(unsigned char *e_ident)
 {
 int index;
 
-printf(" Magic: ");
+printf("  Magic:   ");
 
 for (index = 0; index < EI_NIDENT; index++)
 {
@@ -67,7 +67,7 @@ printf(" ");
  */
 void print_class(unsigned char *e_ident)
 {
-printf(" Class: ");
+printf("  Class:                             ");
 
 switch (e_ident[EI_CLASS])
 {
@@ -91,7 +91,7 @@ printf("<unknown: %x>\n", e_ident[EI_CLASS]);
  */
 void print_data(unsigned char *e_ident)
 {
-printf(" Data: ");
+printf("  Data:                              ");
 
 switch (e_ident[EI_DATA])
 {
@@ -111,11 +111,11 @@ printf("<unknown: %x>\n", e_ident[EI_CLASS]);
 
 /**
  * print_version - Prints the version of an ELF header.
- *@e_ident: A pointer to an array containing the ELF version.
- **/
+ * @e_ident: A pointer to an array containing the ELF version.
+ */
 void print_version(unsigned char *e_ident)
 {
-printf(" Version: %d",
+printf("  Version:                           %d",
 e_ident[EI_VERSION]);
 
 switch (e_ident[EI_VERSION])
@@ -135,7 +135,7 @@ break;
  */
 void print_osabi(unsigned char *e_ident)
 {
-printf(" OS/ABI: ");
+printf("  OS/ABI:                            ");
 
 switch (e_ident[EI_OSABI])
 {
@@ -180,7 +180,7 @@ printf("<unknown: %x>\n", e_ident[EI_OSABI]);
  */
 void print_abi(unsigned char *e_ident)
 {
-printf(" ABI Version: %d\n",
+printf("  ABI Version:                       %d\n",
 e_ident[EI_ABIVERSION]);
 }
 
@@ -188,13 +188,13 @@ e_ident[EI_ABIVERSION]);
  * print_type - Prints the type of an ELF header.
  * @e_type: The ELF type.
  * @e_ident: A pointer to an array containing the ELF class.
- */
+*/
 void print_type(unsigned int e_type, unsigned char *e_ident)
 {
 if (e_ident[EI_DATA] == ELFDATA2MSB)
 e_type >>= 8;
 
-printf(" Type: ");
+printf("  Type:                              ");
 
 switch (e_type)
 {
@@ -225,7 +225,7 @@ printf("<unknown: %x>\n", e_type);
  */
 void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 {
-printf(" Entry point address: ");
+printf("  Entry point address:               ");
 
 if (e_ident[EI_DATA] == ELFDATA2MSB)
 {
@@ -261,8 +261,8 @@ exit(98);
  * ELF header at the start of an ELF file.
  * @argc: The number of arguments supplied to the program.
  * @argv: An array of pointers to the arguments.
- * Return: 0 on success.
- * Description: If the file is not an ELF File or
+ *Return: 0 on success.
+ *Description: If the file is not an ELF File or
  * the function fails - exit code 98.
  */
 int main(int __attribute__((__unused__)) argc, char *argv[])
